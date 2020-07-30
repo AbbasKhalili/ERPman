@@ -1,0 +1,30 @@
+﻿@model Basicinfo.Application.Contract.GoodsType.SelectGoodsTypeQuery
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm("Update", "Goodstype", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.TextBoxFor(model => model.Id);
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.TypeTitle);
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.ParentId);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="cmdSave" type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Basicinfo.Application.Contract.GoodsType.SelectGoodsTypeQuery>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Goodstype", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        @foreach (var itm in Model)
+        {
+            <tr>
+                <td>
+                    @itm.Id
+                </td>
+                <td>
+                    @itm.ParentId
+                </td>
+                <td>
+                    @itm.TypeTitle
+                </td>
+            </tr>
+        }
+
+    </table>
+}

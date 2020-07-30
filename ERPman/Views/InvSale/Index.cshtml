@@ -1,0 +1,31 @@
+﻿@model Basicinfo.Application.Contract.InvoiceSale.DeleteInvoiceSaleCommand 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm("Delete", "InvSale", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.SeqId);
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="cmdSave" type="submit">Create</button>
+            </td>
+        </tr>
+    </table>
+}

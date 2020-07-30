@@ -1,0 +1,27 @@
+﻿@model Basicinfo.Application.Contract.GoodsGroupType.CreateGoodsGroupCommand
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Save", "GoodsGroup", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <table>
+        <tr>
+            <td>
+                @Html.TextBoxFor(model => model.GroupTitle);
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.ParentId);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="cmdSave" type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+}
